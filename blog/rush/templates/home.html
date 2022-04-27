@@ -10,46 +10,24 @@
 </head>
 
 <body>
+
     {% block content %}
-
-    <h1 class="">Blog Posts</h1>
-
-<!-- <div class="row">
-    <div class="container">
-        <div class="col-md-3">
-            <div class="card card-body">
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="container">
-        <div class="col-md-6">
-            <div class="card card-body">
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="container">
-        <div class="col-md-6">
-            <div class="card card-body">
-
-            </div>
-        </div>
-    </div>
-</div> -->
+    <h1>Blog Posts</h1>
+    
 
 
 <ul class="post-list">
 {% for post in object_list %}
-   <li class="post""> <a clas="article-link" href="{% url 'article_details' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }} 
+
+   <li class="post">
+    <div class="container-article">
+
+    <a clas="article-link" href="{% url 'article_details' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }} 
     {{ post.author.last_name }}<br/>
-    {{ post.body }} </li>
+    {{ post.body }}
+</div>
+</li>
+
 {% endfor %}
 </ul>
 
