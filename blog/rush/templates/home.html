@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,17 +7,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=devicewidth, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="{% static 'scss/main.css' %}" type="text/css"> -->
 </head>
 
 <body>
     {% block content %}
 
     <h1 class="">Blog Posts</h1>
- 
-<ul>
+
+<!-- <div class="row">
+    <div class="container">
+        <div class="col-md-3">
+            <div class="card card-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="container">
+        <div class="col-md-6">
+            <div class="card card-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="container">
+        <div class="col-md-6">
+            <div class="card card-body">
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<ul class="post-list">
 {% for post in object_list %}
-   <li> <a href="{% url 'article_details' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }} 
+   <li class="post""> <a clas="article-link" href="{% url 'article_details' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }} 
     {{ post.author.last_name }}<br/>
     {{ post.body }} </li>
 {% endfor %}
